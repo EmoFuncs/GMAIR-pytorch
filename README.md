@@ -4,8 +4,13 @@ An official implementation of GMAIR [paper](https://arxiv.org/abs/2106.01722).
 ## Prepare
 ```
 git clone https://github.com/EmoFuncs/GMAIR-pytorch.git
-cd ./GMAIR-pytorch/gmair/utils/bbox
+```
+
+Build bbox:
+```
+cd GMAIR-pytorch/gmair/utils/bbox
 python setup.py build
+cp build/lib/bbox.so .
 ```
 
 ## Datasets
@@ -16,6 +21,7 @@ Download Fruit2D from \[TODO\]
 -->
 
 ## Train
+Put datasets to folder './dataset'
 For training MultiMNIST or Fruit2D, substitute 'config.py' with 'mnist_config.py' or 'fruit_config.py' in folder './config', respectively.
 
 ```
