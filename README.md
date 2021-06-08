@@ -17,7 +17,7 @@ cp build/lib/bbox.so .
 
 ## Datasets
 ### MultiMNIST dataset
-[link]()
+[link](https://drive.google.com/file/d/1BIzWAExc0NDSF_a6RnTvfBMvbXhTAns5/view?usp=sharing)
 The dataset is generated from a modified version of [MultiDigitMNIST](https://github.com/yonkshi/MultiDigitMNIST).
 
 ### Fruit2D dataset
@@ -75,7 +75,11 @@ python train.py
 
 
 ## Test
-Set the path of checkpoint file in the configuration file 'config.py'.
+Checkpoints:
+[MultiMNIST](https://drive.google.com/file/d/11VHRFyAE0K3Gstj0hdd8yzy4BVzUErxX/view?usp=sharing)
+[Fruit2D](https://drive.google.com/file/d/13wG_gNqgBollwH1WLP_MTyxodIX-1dPE/view?usp=sharing)
+
+Set the path of checkpoint file in the configuration file 'config.py' (the variable 'test_model_path').
 
 ```
 python test.py
