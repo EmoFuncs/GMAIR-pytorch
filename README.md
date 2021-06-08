@@ -2,8 +2,10 @@
 An official implementation of GMAIR [paper](https://arxiv.org/abs/2106.01722).
 
 ## Prepare
+This project uses Python 3.8 and Pytorch 1.8.1.
 ```
 git clone https://github.com/EmoFuncs/GMAIR-pytorch.git
+pip install -r requirements.txt
 ```
 
 Build bbox:
@@ -14,19 +16,63 @@ cp build/lib/bbox.so .
 ```
 
 ## Datasets
-The links to datasets will be released soon.
-<!---
-Download MultiMNIST from \[TODO\]
-Download Fruit2D from \[TODO\]
--->
+### MultiMNIST dataset
+[link]()
+The dataset is generated from a modified version of [MultiDigitMNIST](https://github.com/yonkshi/MultiDigitMNIST).
+
+### Fruit2D dataset
+[train images](https://drive.google.com/file/d/1MCXo6VRI6Pf8WG2-dHbPNCJZVKOpNoHX/view?usp=sharing)
+[train annotations](https://drive.google.com/file/d/1wbidjghjwLracHq8HRZ-zidWIE0R4xSV/view?usp=sharing)
+[test images](https://drive.google.com/file/d/11BDgxjnZ7wXwCPFksL4rHIthuddhLWUW/view?usp=sharing)
+[test annotations](https://drive.google.com/file/d/13Y5ZRu5ojspYOI0Ku1nJ0tu1lPbFrlZa/view?usp=sharing)
+
+Note that annotations are only used for evaluation.
+
+
 
 ## Train
-Put datasets to folder './dataset'
-For training MultiMNIST or Fruit2D, substitute 'config.py' with 'mnist_config.py' or 'fruit_config.py' in folder './config', respectively.
+For MultiMNIST, download MultiMNIST dataset. Unzip it, and put it into 'data/multi_mnist/'.
+Substitute 'config.py' with 'mnist_config.py' in 'gmair/config'
+```
+cd gmair/config
+cp mnist_config.py config.py
+cd ../..
+```
 
+For Fruit2d, download Fruit2d dataset. Unzip them, and put them into 'data/fruit2d/'.
+Substitute 'config.py' with 'fruit_config.py' in 'gmair/config'
+```
+cd gmair/config
+cp mnist_config.py config.py
+cd ../..
+```
+
+The architecture should be:
+```
+data
+|---fruit2d
+|   |---test_images
+|   |   |---x.png
+|   |
+|   |---test_labels
+|   |   |---x.txt
+|   |
+|   |---train_images
+|   |   |---y.png
+|   |
+|   |---train_labels
+|       |---y.txt
+|   
+|---scatter_mnist
+    |---scattered_mnist_128x128_obj14x14.hdf5
+```
+
+Then,
 ```
 python train.py
 ```
+
+
 
 ## Test
 Set the path of checkpoint file in the configuration file 'config.py'.
