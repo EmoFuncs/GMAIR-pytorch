@@ -1,7 +1,7 @@
 import os
 
 dataset = 'multi_mnist'
-dataset_dir = './data/scatter_mnist/'
+dataset_dir = './data/multi_mnist/'
 
 log_dir = './logs/multi_mnist'
 
