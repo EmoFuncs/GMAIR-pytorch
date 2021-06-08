@@ -1,7 +1,7 @@
 import os
 
 dataset = 'fruit2d'
-dataset_dir = './data/bigmelon/'
+dataset_dir = './data/fruit2d/'
 
 log_dir = './logs/fruit2d'
 
