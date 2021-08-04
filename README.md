@@ -1,5 +1,5 @@
 # GMAIR-pytorch
-An official implementation of GMAIR [paper](https://arxiv.org/abs/2106.01722).
+An official implementation of GMAIR.
 
 ## Prepare
 This project uses Python 3.8 and Pytorch 1.8.1.
